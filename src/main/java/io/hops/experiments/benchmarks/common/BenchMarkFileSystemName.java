@@ -12,7 +12,8 @@ public enum BenchMarkFileSystemName {
     HopsFS      ("HopsFS"),
     HDFS        ("HDFS"),
     CephFS      ("CephFS"),
-    MapRFS      ("MapR-FS");
+    MapRFS      ("MapR-FS"),
+    S3A      ("S3");
 
     private final String phase;
     private BenchMarkFileSystemName(String phase){

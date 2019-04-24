@@ -619,6 +619,15 @@ public class BMConfiguration implements Serializable {
     } else if (getBenchMarkFileSystemName() == BenchMarkFileSystemName.MapRFS) {
       System.out.println("Creating config for MapR-FS");
       //FS_DEFAULTFS_KEY is already defined
+    
+    } else if (getBenchMarkFileSystemName() == BenchMarkFileSystemName.S3A) {
+      System.out.println("Creating config for AWS S3");
+      dfsClientConf.setProperty("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem");
+      dfsClientConf.setProperty("fs.s3a.endpoint", "s3-eu-north-1.amazonaws.com");
+      dfsClientConf.setProperty("test.fs.s3a.name", "hops-datanode-test");
+      dfsClientConf.setProperty("fs.s3a.access.key", "");
+      dfsClientConf.setProperty("fs.s3a.secret.key", "");
+      
     } else {
       throw new UnsupportedOperationException(getBenchMarkFileSystemName() + " is not yet supported");
     }
