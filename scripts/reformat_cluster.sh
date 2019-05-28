@@ -7,6 +7,8 @@ echo "1. Format namenode"
 echo "2. Delete Datanode directories and runtime config"
 rm -rf /mnt/hopsdata/hdfs/dn/current/
 rm -rf /mnt/hopsdata/hdfs/nn/current/
+rm -rf /mnt/hadoop/logs/hadoop-*-datanode-ip-*.log
+rm -rf /mnt/hadoop/logs/hadoop-*-namenode-ip-*.log
 
 echo "3. reboot namenode"
 sudo service namenode restart
